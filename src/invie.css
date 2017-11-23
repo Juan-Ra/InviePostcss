@@ -1,0 +1,472 @@
+@import 'variables.css';
+@import 'iconfonts.css';
+
+@lost flexbox flex;
+
+/*-- Custom mediaqueries*/
+@custom-media --min (max-width: 500px);
+@custom-media --small (max-width: 660px);
+@custom-media --medium (max-width: 767px);
+@custom-media --big (max-width: 800px);
+
+@custom-media --retina (-webkit-min-device-pixel-ratio:2);
+
+
+/*mixins*/
+  @define-mixin btn $textColor, $bgColor, $bgColorStart, $bgColrEnd {
+    border-radius: .5em;
+    border: none;
+    color: $(textColor);
+    padding: .5em .8em;
+    cursor: pointer;
+    font-size: var(--fontSize);
+    text-decoration: none;
+    background: $(bgColor);
+    background: linear-gradient( to left, $(bgColorStart), $(bgColrEnd) );
+  }
+
+  body {
+    font-family: 'Allerta', sans-serif;
+    margin: 0;
+  }
+
+
+.u-wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+
+.prices .InvieHero{
+  height: auto;
+}
+
+
+.InvieHero {
+  color: var(--bg-body);
+  padding: 2em;
+  height: 500px;
+  background:  url('../images/background.png') var(--bg-header)  0% 0%/cover;
+
+  @media (--big){
+    height: auto;
+  }
+
+  @media (--min) {
+    text-align:center;
+  }
+
+  @media (--retina){
+    background: url('../images/background2x.png') var(--bg-header)  0% 0%/cover;
+  }
+
+  &-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (--small){
+      text-align: center;
+      flex-direction: column;
+    }
+    @media (--min){
+      position: static;
+    }
+  }
+
+  &-logo {
+    display: inline-block;
+    margin: 16px 0;
+
+
+    @media (--small) {
+      margin: 0;
+    }
+  }
+
+  &-btn{
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 50%;
+    border: 1px solid var(--bg-body);
+    background: color(var(--bg-header) a(60%));
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    left: 1.3em;
+    top: 1.3em;
+    color:  var(--bg-body);
+    z-index: 3;
+    display: none;
+
+    @media (--min) {
+      display: block;
+    }
+  }
+
+  &-navbar{
+    font-size: 1.5em;
+    display: inline-block;
+
+    @media (--min) {
+        background-color: color(var(--btn-gradient) a(80%));
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        transition: .3s;
+
+        &.active{
+          left: 0;
+        }
+        & ul {
+          flex: 1;
+        }
+
+        & li {
+          display: block;
+          margin: 0;
+          padding: 1.3em 0;
+          border-bottom: 1px solid white;
+        }
+
+        & li:first-child {
+          border-top: 1px solid white;
+        }
+
+
+        & li:before {
+          display: none;
+        }
+    }
+  }
+
+  &-menu {
+    padding: 0;
+  }
+
+  &-menu-item{
+    display: inline-block;
+    margin-left: 1em;
+
+    &:before {
+    content: '▸ ';
+    font-size: 1.1em;
+    line-height: 1.1em;
+    color: var(--bg-body);
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &-menu-anchor{
+    color: var(--bg-body);
+    text-decoration: none;
+
+    &:hover{
+      border-bottom: .1em solid white;
+    }
+  }
+
+  &-copy {
+    &-title{
+      font-size: 4.2em;
+      font-family: 'Montserrat', sans-serif;
+      margin: 1.6em 0 0 ;
+
+      & span {
+        text-decoration: underline;
+      }
+
+      @media (--big){
+        font-size: 2.5em;
+        margin-top: 1.1em;
+      }
+
+      @media (--min){
+        font-size: 1.7em;
+        margin-top: 1.1em;
+      }
+
+    }
+
+    &-subtitle{
+      font-size: 1.5em;
+      margin-top: 0;
+
+      @media (--big){
+        font-size: 1.1em;
+      }
+      @media (--min){
+       font-size: 0.7em;
+      }
+    }
+
+    &-btn {
+      @mixin btn var(--bg-body), var(--btn-gradient), var(--btn-gradient-start), var(--btn-gradient-end);
+
+      @media (--big){
+        margin-bottom: 2em;
+        display: inline-block;
+      }
+      @media (--min) {
+        display: block;
+        margin: 2em;
+      }
+    }
+  }
+
+}
+
+
+
+.InvieGuitars{
+  color: var(--bg-footer);
+  margin-bottom: 6em;
+
+  @media (--big) {
+    text-align: center;
+    margin: 1.2em;
+  }
+
+  &-title{
+    font-size: 2.2em;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.6em 0 1em 0;
+
+    @media (--big) {
+      margin: 0 0 .6em 0;
+    }
+  }
+
+  &-item{
+    margin: 0 0 2.5em 0;
+    padding: .6em 2em;
+    border: 1px solid #1F313C;
+    border-radius: .5em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 13em;
+    box-shadow: .4em .4em 0 transparent;
+    transition: .3s;
+
+    @media (--big) {
+      flex-direction: column;
+    }
+
+    &:nth-of-type(even){
+      justify-content: flex-end;
+    }
+
+
+    &:nth-of-type(even) .InvieGuitars-item-img{
+    left: 0;
+    right: initial;
+    }
+
+
+    &:hover{
+      box-shadow: .4em .4em 0 var(--bg-footer);
+      background-color: color(var(--bg-footer) lightness(95%));
+    }
+
+    &-img{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @media (--big) {
+        position: static;
+        width: 13em;
+      }
+      @media (--min) {
+        width: 11em;
+      }
+    }
+
+    &-title{
+      font-size: 3em;
+      margin: 0 0 .2em;
+      border-bottom: .04em dashed var(--bg-footer);
+      padding-bottom: .2em;
+
+      @media (--min){
+          font-size: 1.8em;
+      }
+
+    }
+
+    &-list{
+      padding: 0;
+      list-style-position: inside;
+    }
+  }
+
+}
+
+.InviePrices{
+      margin: 4em 1.5em 6em;
+
+
+  &-container{
+    @media (--big){
+        overflow: auto;
+        border: 1px solid #273b47;
+    }
+  }
+
+  &-chart, & td, & th {
+    border: 1px solid  #273b47;
+    border-collapse: collapse;
+  }
+
+  &-chart{
+    width: 100%;
+
+    & th{
+      background: var(--bg-footer);
+      color: var(--bg-body);
+      padding: 1em 1.3em;
+      text-align: left;
+    }
+    & td{
+      padding: 1.3em;
+    }
+
+  }
+}
+
+
+.InvieFooter {
+  background-color: var(--bg-footer);
+  color: var(--bg-body);
+  padding: 3.8em 0;
+
+  &-container{
+    display: flex;
+    justify-content: space-between;
+
+    @media (--medium) {
+      display: block;
+    }
+  }
+
+  &-contact{
+    display: flex;
+    width: 19em;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media (--medium) {
+      margin: 0 auto;
+    }
+
+    & strong{
+      display: block;
+    }
+
+  }
+
+  &-link{
+      color: inherit;
+      text-decoration: none;
+      margin: .6em .6em .6em 0;
+  }
+
+  &-logo{
+    display: block;
+  }
+
+  &-form{
+    display: flex;
+    justify-content: space-between;
+    width: 27em;
+    padding: 0 .6em;
+
+    @media (--medium) {
+      display: block;
+      margin: auto;
+      width: 19em;
+    }
+
+    &-column{
+      display: flex;
+      flex-direction: column;
+
+      &:first-of-type{
+        margin-right: 1em;
+        @media(--medium) {
+          margin: 0;
+        }
+      }
+
+      &:nth-of-type(2){
+        align-items: flex-start;
+
+        @media (--min){
+        align-items: stretch;
+        }
+      }
+
+    }
+
+    & input, & textarea{
+      outline: 0;
+    }
+
+    & textarea {
+      @media(--medium) {
+        width: 100%;
+      }
+    }
+
+    & input:focus, & textarea:focus{
+      background-color: rgba(169,194,208,1);
+    }
+
+    & input[type="text"], & input[type="email"] {
+      @media (--medium) {
+        display: block;
+        width: 100%;
+        margin-top: .3em;
+        font-size:.8em ;
+        padding: .3em;
+      }
+    }
+
+    & input[type="radio"], & input[type="checkbox"] {
+      @media (--medium) {
+          zoom: 1.5;
+        }
+    }
+
+    &-label, & .sexo, & .intereses{
+      margin-bottom: .7em;
+    }
+
+    & .intereses label{
+      font-size: .8em;
+
+      @media (--medium) {
+        display: block;
+        font-size: 1em;
+      }
+    }
+
+
+    &-btn{
+      @mixin btn var(--bg-body), var(--btn-gradient), var(--btn-gradient-start), var(--btn-gradient-end);
+    }
+  }
+}

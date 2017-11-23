@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Precios de tus mejores guitarras</title>
+    <meta charset="utf-8"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body class="prices">
+    <section  id="portada" class="InvieHero"> <!-- portada -->
+      <header id="header" class="InvieHero-header u-wrapper"> <!-- header -->
+        <figure class="InvieHero-logo"> <!-- logotipo -->
+          <img src="images/invie.png" srcset="images/invie.png 1x, images/invie2x.png 2x" width="186" height="60" alt="Invie logotipo"/>
+        </figure>
+        <span id="burguer-button" class="InvieHero-btn icon-menu"></span>
+
+        <nav class="InvieHero-navbar" id="menu"> <!-- menu -->
+          <ul class="InvieHero-menu">
+            <li class="InvieHero-menu-item">
+              <a class="InvieHero-menu-anchor" href="index.html">Home</a>
+            </li>
+            <li class="InvieHero-menu-item">
+              <a class="InvieHero-menu-anchor" href="#guitarras">Guitarras</a>
+            </li>
+            <li class="InvieHero-menu-item">
+              <a class="InvieHero-menu-anchor" href="precios.html">Precios</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+
+    <section class="InviePrices"><!-- tabla -->
+      <div class="InviePrices-container u-wrapper">
+        <table class="InviePrices-chart">
+          <thead class="InviePrices-chart-head">
+            <tr class="InviePrices-chart-head-row">
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody class="InviePrices-chart-body">
+            <tr class="InviePrices-chart-body-row">
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+            <tr class="InviePrices-chart-body-row">
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+            <tr class="InviePrices-chart-body-row">
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+              <td>Invie Classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+
+    <footer class="InvieFooter">
+      <div class="InvieFooter-container u-wrapper">
+        <div class="InvieFooter-contact">
+          <img class="InvieFooter-logo" src="images/invie-white.png" alt="logotipo blanco"/>
+          <a class="InvieFooter-link" href="tel:+573024456678"><strong>Telefono</strong> <span>3024456678</span></a>
+          <a class="InvieFooter-link" href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span></a>
+        </div>
+        <form class="InvieFooter-form">
+          <div class="InvieFooter-form-column">
+            <label class="InvieFooter-form-label" for="nombre">Nombre
+              <input class="InvieFooter-form-input InvieFooter-form-input--text" type="text" required id="nombre" name="nombre"/>
+            </label>
+            <label class="InvieFooter-form-label" for="email">E-mail
+              <input class="InvieFooter-form-input InvieFooter-form-input--text" type="email" required id="email" name="email"/>
+            </label>
+            <div class="sexo">
+              <label class="InvieFooter-form-label" for="mujer">
+                <input class="InvieFooter-form-input InvieFooter-form-input--radio" type="radio" id="mujer" checked name="sexo" value="mujer"> Mujer
+              </label>
+              <label class="InvieFooter-form-label" for="hombre">
+                <input class="InvieFooter-form-input InvieFooter-form-input--radio" type="radio" id="hombre" name="sexo" value="hombre"> Hombre
+              </label>
+            </div>
+            <div class="intereses">
+              <label class="InvieFooter-form-label" for="cotizacion">
+                <input class="InvieFooter-form-input InvieFooter-form-input--check" type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion"> Cotización
+              </label>
+              <label class="InvieFooter-form-label" for="reclamos">
+                <input class="InvieFooter-form-input InvieFooter-form-input--check" type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+              </label>
+              <label class="InvieFooter-form-label" for="comentarios">
+                <input class="InvieFooter-form-input InvieFooter-form-input--check" type="checkbox" id="comentarios" name="intereses" value="comantarios"> Comentarios
+              </label>
+              <label class="InvieFooter-form-label" for="otros">
+                <input class="InvieFooter-form-input InvieFooter-form-input--check" type="checkbox" id="otros" name="intereses" value="otros"> Otros
+              </label>
+            </div>
+          </div>
+          <div class="InvieFooter-form-column">
+            <label class="InvieFooter-form-label" for="comentarios">Comentarios
+              <textarea class="InvieFooter-form-input InvieFooter-form-input--textarea" name="comantarios" id="comentarios" cols="30" rows="7"></textarea>
+            </label>
+            <input class="InvieFooter-form-btn" type="submit" value="Enviar" class="button"/>
+          </div>
+        </form>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.7/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
+    <script>
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+
+      var $burguerButton = document.getElementById('burguer-button');
+      var $menu = document.getElementById('menu');
+      function toggleMenu(){
+        $menu.classList.toggle('active');
+        $burguerButton.classList.toggle('icon-close');
+      };
+      function showMenu(){
+        $menu.classList.add('active');
+        $burguerButton.classList.add('icon-close');
+      };
+      function hideMenu(){
+        $menu.classList.remove('active');
+        $burguerButton.classList.remove('icon-close');
+      };
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          // si se cumple hagamos esto
+          console.log('se cumplió la condicion');
+          $burguerButton.addEventListener('touchstart', toggleMenu);
+        } else {
+          $burguerButton.removeEventListener('touchstart', toggleMenu);
+          // si no se cumple hagamos esto
+          console.log('no se cumplió la condicion');
+        }
+      }
+      mediaQuery();
+
+      // lazy loading
+      var bLazy = new Blazy({
+          selector: 'img'
+      });
+      // $burguerButton.addEventListener('touchstart', toggleMenu);
+
+      // function toggleMenu(){
+      //   $menu.classList.toggle('active')
+      // };
+
+      // Gestos touch
+      var $body = document.body;
+
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu);
+      gestos.on('swiperight', showMenu);
+    </script>
+
+  </body>
+</html>
